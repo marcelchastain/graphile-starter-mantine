@@ -3,7 +3,7 @@ import { PageContextBuiltInClient } from "vite-plugin-ssr/client/router/index";
 
 export default (pageContext: PageContextBuiltInClient & PageContext) => {
   const { url } = pageContext;
-  const rx = /\/o\/\w+\/settings\/members$/;
+  const rx = /\/o\/[-\w]+\/settings\/members$/;
   if (!rx.test(url)) {
     return false;
   }
