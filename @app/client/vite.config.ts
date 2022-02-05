@@ -9,10 +9,13 @@ const config: UserConfig = {
     EnvironmentPlugin(["ROOT_URL"]),
     // This seems to still be needed for @app/config
     viteCommonjs(),
-    react(),
+    react({
+      // Without this, the production build on React 17 throws the error
+      // `jsxDevRuntime.jsxDEV is not a function`
+      jsxRuntime: "classic",
+    }),
     ssr(),
   ],
-  // root: "./src",
   optimizeDeps: {
     include: ["@app/config", "@app/graphql", "@app/lib"],
   },

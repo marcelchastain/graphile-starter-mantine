@@ -92,7 +92,7 @@ const OrganizationSettingsPageInner: React.FC<OrganizationSettingsPageInnerProps
                 opened={popOpen}
                 okText={"Yes"}
                 cancelText={"No"}
-                title={`Are you sure you want to delete {organization.name}?`}
+                title={`Are you sure you want to delete ${organization.name}?`}
                 onClose={() => setPopOpen(false)}
                 onConfirm={handleDelete}
                 target={

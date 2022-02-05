@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "_dev": "vite",
-    "build": "cross-env NODE_ENV=production NODE_OPTIONS=\"$NODE_OPTIONS -r @app/config/env\" yarn build:client && yarn build:server",
-    "build:client": "vite build",
-    "build:server": "vite build --ssr",
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "cross-env NODE_ENV=production NODE_OPTIONS=\"$NODE_OPTIONS -r @app/config/env\" vite build",
+    "build:server": "cross-env NODE_ENV=production NODE_OPTIONS=\"$NODE_OPTIONS -r @app/config/env\" vite build --ssr",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {

@@ -19,9 +19,6 @@ import { AiOutlineCrown, AiOutlineDown } from "react-icons/ai";
 import { navigate } from "vite-plugin-ssr/client/router";
 
 import { AuthRestrict, Warn } from "../components";
-import { appConfig } from "../helpers";
-
-const { projectName } = appConfig;
 
 type SharedQueryType = Pick<
   QueryResult<SharedLayout_QueryFragment>,
@@ -82,6 +79,9 @@ export function AppHeader({
   const { urlPathname: currentUrl } = usePageContext();
   const client = useApolloClient();
   const [logout] = useLogoutMutation({ client: client });
+  const {
+    appConfig: { projectName },
+  } = usePageContext();
 
   const handleLogout = useCallback(async () => {
     const reset = async () => {

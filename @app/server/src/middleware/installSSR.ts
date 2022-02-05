@@ -1,3 +1,4 @@
+import * as appConfig from "@app/config";
 import { makeApolloClient } from "@app/lib";
 import { Express } from "express";
 import { resolve as pathResolve } from "path";
@@ -47,6 +48,7 @@ export default async function installSSR(app: Express) {
     const pageContextInit = {
       apolloClient,
       csrfToken: req.csrfToken(),
+      appConfig,
       ROOT_URL,
       url,
     };

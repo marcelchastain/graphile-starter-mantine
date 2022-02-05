@@ -16,6 +16,7 @@ export { onBeforeRender };
 export const passToClient = [
   "apolloInitialState",
   "csrfToken",
+  "appConfig",
   "documentProps",
   "helmetContext",
   "pageProps",

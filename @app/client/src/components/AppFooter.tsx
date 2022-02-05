@@ -1,11 +1,11 @@
+import { usePageContext } from "@app/client/src/renderer/usePageContext";
 import { Anchor, Text } from "@mantine/core";
 import React from "react";
 
-import { appConfig } from "../helpers";
-
-const { companyName } = appConfig;
-
 export function AppFooter() {
+  const {
+    appConfig: { companyName },
+  } = usePageContext();
   return (
     <div
       id={"footer"}

@@ -11,6 +11,13 @@ export type PageContext = {
     title?: string;
     description?: string;
   };
+  appConfig: {
+    fromEmail: "string";
+    awsRegion?: "string";
+    projectName: "string";
+    companyName: "string";
+    emailLegalText: "string";
+  };
   ROOT_URL: string;
   csrfToken: string;
   apolloClient: ApolloClient<any>;
