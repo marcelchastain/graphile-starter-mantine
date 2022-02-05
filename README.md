@@ -1,5 +1,8 @@
 # Graphile Starter - Vite + Mantine Edition
 
+![Screen Shot 2022-02-05 at 3 22 10 PM](https://user-images.githubusercontent.com/239227/152662260-08594312-abdc-45be-86b4-584ed1a29201.png)
+
+
 ## NOT FOR BEGINNERS
 
 We do not advise that you build your own projects on top of this project until
