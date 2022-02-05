@@ -1,20 +1,4 @@
-# Graphile Starter
-
-## Take it for a spin!
-
-We're running the starter at:
-
-https://graphile-starter.herokuapp.com
-
-Feel free to register an account and have a poke around as you see fit.
-
-**NOTE**: emails are sent from Graphile Starter, so please only enter email
-addresses you control.
-
-**NOTE**: every time we merge to master, we ship a new version of Graphile
-Starter to Heroku and entirely wipe the database, so your data may not persist.
-If you wish to delete your data before this time you can do so via the delete
-account feature baked into the starter.
+# Graphile Starter - Vite + Mantine Edition
 
 ## NOT FOR BEGINNERS
 
