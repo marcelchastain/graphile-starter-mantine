@@ -233,6 +233,8 @@ keep them small!) Failing that, try the Docker mode :)
 
 ### Docker development
 
+_Note: Docker is currently buggy in this fork of starter (graphile-starter-vite)_
+
 Requires:
 
 - [`docker`](https://docs.docker.com/install/)
