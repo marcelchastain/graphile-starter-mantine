@@ -1,3 +1,4 @@
+import installClientStatic from "./installClientStatic";
 import installCSRFProtection from "./installCSRFProtection";
 import installCypressServerCommand from "./installCypressServerCommand";
 import installDatabasePools from "./installDatabasePools";
@@ -13,6 +14,7 @@ import installSharedStatic from "./installSharedStatic";
 import installWorkerUtils from "./installWorkerUtils";
 
 export {
+  installClientStatic,
   installCSRFProtection,
   installCypressServerCommand,
   installDatabasePools,
