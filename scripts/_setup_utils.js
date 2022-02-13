@@ -101,6 +101,13 @@ exports.updateDotenv = function updateDotenv(add, answers) {
   );
 
   add(
+    "CRA_DEVSERVER_PORT",
+    "3001",
+    `\
+# This port is the one CRA devserver will be running at`
+  );
+
+  add(
     "GITHUB_KEY",
     null,
     `\

@@ -34,5 +34,5 @@ process.env.TEST_DATABASE_URL = `postgres://${process.env.DATABASE_OWNER}:${proc
 process.env.CYPRESS_ROOT_URL = process.env.ROOT_URL;
 process.env.CYPRESS_FRONTEND_URL =
   process.env.ROOT_URL === "development"
-    ? "http://localhost:3001"
+    ? `http://localhost:${process.env.CRA_DEVSERVER_PORT}`
     : process.env.ROOT_URL;

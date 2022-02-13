@@ -15,6 +15,7 @@ declare module "express-serve-static-core" {
 }
 
 const isDev = process.env.NODE_ENV !== "production";
+const port = process.env.CRA_DEVSERVER_PORT || 3001;
 
 export default (app: Express) => {
   const middleware: RequestHandler = (req, res, next) => {
@@ -23,7 +24,8 @@ export default (app: Express) => {
         req.headers.origin === process.env.ROOT_URL ||
         (isDev &&
           process.env.ROOT_URL &&
-          req.headers.origin === process.env.ROOT_URL.replace("5678", "3001"))
+          req.headers.origin ===
+            process.env.ROOT_URL.replace("5678", `${port}`))
     );
     next();
   };
