@@ -10,12 +10,12 @@ import {
   useSettingsProfileQuery,
   useUpdateUserMutation,
 } from "@app/graphql";
-import { extractError, getCodeFromError } from "../helpers/errors";
+import { extractError, getCodeFromError } from "../../helpers/errors";
 import { Alert, Box, Button, Group, Text, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/hooks";
 import React, { useCallback, useState } from "react";
 
-const Settings: React.FC = () => {
+const Settings_Profile: React.FC = () => {
   const [formError, setFormError] = useState<Error | ApolloError | null>(null);
   const query = useSettingsProfileQuery();
   const { data, loading, error } = query;
@@ -156,4 +156,4 @@ function ProfileSettingsForm({
     </>
   );
 }
-export default Settings;
+export default Settings_Profile;
