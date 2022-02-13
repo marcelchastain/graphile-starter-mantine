@@ -4,16 +4,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "yarn build:es2015 && yarn build:cjs",
-    "build:es2015": "tsc --module es2015 --target es2015 --outdir es2015",
-    "build:cjs": "tsc --module commonjs --target es5 --outdir dist",
+    "build": "tsc -b",
     "test": "cross-env NODE_ENV=test NODE_OPTIONS=\"$NODE_OPTIONS -r @app/config/env\" jest"
-  },
-  "exports": {
-    ".": {
-      "import": "./es2015/index.js",
-      "require": "./dist/index.js"
-    }
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
