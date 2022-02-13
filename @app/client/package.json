@@ -2,6 +2,7 @@
   "name": "@app/client",
   "version": "0.0.0",
   "scripts": {
+    "dev": "BROWSER=none PORT=3001 yarn start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -38,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "postcss-normalize": "^10.0.1"
   }
 }
