@@ -10,11 +10,11 @@ context("Manage emails", () => {
     // Action
     cy.getCy("layout-dropdown-user").trigger("mouseover");
     cy.getCy("layout-link-settings").click();
-    cy.url().should("equal", Cypress.env("ROOT_URL") + "/settings");
+    cy.location("pathname").should("equal", "/settings");
     cy.getCy("settingslayout-link-emails").click();
 
     // Assertion
-    cy.url().should("equal", Cypress.env("ROOT_URL") + "/settings/emails");
+    cy.location("pathname").should("equal", "/settings/emails");
   });
 
   it("can add an email, verify it, make it primary, and delete original email", () => {
@@ -44,7 +44,7 @@ context("Manage emails", () => {
       )}&token=${encodeURIComponent(verification_token!)}`;
       cy.visit(url);
       cy.contains("Email Verified").should("exist");
-      cy.visit(Cypress.env("ROOT_URL") + "/settings/emails");
+      cy.visit(Cypress.env("FRONTEND_URL") + "/settings/emails");
     });
 
     // Assertion
