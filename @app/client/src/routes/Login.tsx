@@ -21,7 +21,7 @@ import {
 import { useForm } from "@mantine/hooks";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AiOutlineLock, AiOutlineUser, AiOutlineUserAdd } from "react-icons/ai";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { resetWebsocketConnection } from "../helpers/apolloClient";
 import { extractError, getCodeFromError } from "../helpers/errors";
 
@@ -36,7 +36,8 @@ const Login: React.FC = () => {
   const [error, setError] = useState<Error | ApolloError | null>(null);
   const [showLogin, setShowLogin] = useState<boolean>(false);
   const query = useSharedQuery();
-  const { next: rawNext } = useParams();
+  const [searchParams] = useSearchParams();
+  const rawNext = searchParams.get("next");
   const next: string = isSafe(rawNext) ? rawNext! : "/";
 
   return (

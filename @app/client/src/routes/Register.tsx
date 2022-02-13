@@ -20,7 +20,7 @@ import {
 import { useForm } from "@mantine/hooks";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { resetWebsocketConnection } from "../helpers/apolloClient";
 import {
   extractError,
@@ -38,7 +38,9 @@ function isSafe(nextUrl?: string | null) {
  */
 const Register: React.FC = () => {
   const [error, setError] = useState<Error | ApolloError | null>(null);
-  const { next: rawNext } = useParams();
+  const [searchParams] = useSearchParams();
+  const rawNext = searchParams.get("next");
+
   const next: string = isSafe(rawNext) ? rawNext! : "/";
   const query = useSharedQuery();
 
