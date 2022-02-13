@@ -8,6 +8,7 @@ const Register = lazy(() => import("./routes/Register"));
 const Reset = lazy(() => import("./routes/Reset"));
 const Forgot = lazy(() => import("./routes/Forgot"));
 const Verify = lazy(() => import("./routes/Verify"));
+const Settings = lazy(() => import("./routes/Settings"));
 
 const AppRoutes: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes: React.FC = () => {
       <Route path={"/reset"} element={<Reset />} />
       <Route path={"/forgot"} element={<Forgot />} />
       <Route path={"/verify"} element={<Verify />} />
+      <Route path={"/settings"} element={<Settings />} />
       <Route path={"*"} element={<FourOhFourPage />} />
     </Routes>
   );
