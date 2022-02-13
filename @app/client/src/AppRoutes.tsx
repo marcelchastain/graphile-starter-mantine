@@ -11,6 +11,7 @@ const Verify = lazy(() => import("./routes/Verify"));
 const Settings_Profile = lazy(() => import("./routes/settings/Index"));
 const Settings_Security = lazy(() => import("./routes/settings/Security"));
 const Settings_Accounts = lazy(() => import("./routes/settings/Accounts"));
+const Settings_Delete = lazy(() => import("./routes/settings/Delete"));
 
 const AppRoutes: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const AppRoutes: React.FC = () => {
       <Route path={"/verify"} element={<Verify />} />
       <Route path={"/settings"} element={<Settings_Profile />} />
       <Route path={"/settings/accounts"} element={<Settings_Accounts />} />
+      <Route path={"/settings/delete"} element={<Settings_Delete />} />
       <Route path={"/settings/security"} element={<Settings_Security />} />
       <Route path={"*"} element={<FourOhFourPage />} />
     </Routes>
