@@ -33,8 +33,8 @@ services:
     ports:
       # The main server
       - "5678:5678"
-      # Websockets
-      - "24678:24678"
+      # CRA devserver
+      - "3001:3001"
       # Node `--inspect=...` port numbers for debugging
       - "9678:9678"
       - "9876:9876"
@@ -102,8 +102,8 @@ services:
     ports:
       # The main server
       - "5678:5678"
-      # Websockets
-      - "24678:24678"
+      # CRA devserver
+      - "3001:3001"
       # Node `--inspect=...` port numbers for debugging
       - "9678:9678"
       - "9876:9876"
