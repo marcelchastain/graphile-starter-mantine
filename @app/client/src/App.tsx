@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Home from "./routes/Home";
-import About from "./routes/About";
+const Home = lazy(() => import("./routes/Home"));
+const About = lazy(() => import("./routes/About"));
 
 function App() {
   return (
@@ -19,10 +19,12 @@ function App() {
               </li>
             </ul>
           </nav>
-          <Routes>
-            <Route path={"/"} element={<Home />} />
-            <Route path={"/about"} element={<About />} />
-          </Routes>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path={"/"} element={<Home />} />
+              <Route path={"/about"} element={<About />} />
+            </Routes>
+          </Suspense>
         </div>
       </Router>
     </div>
