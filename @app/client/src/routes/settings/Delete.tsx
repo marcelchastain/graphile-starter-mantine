@@ -9,11 +9,12 @@ import {
   useRequestAccountDeletionMutation,
   useSharedQuery,
 } from "@app/graphql";
-import { getCodeFromError } from "@app/lib";
 import { Alert, Button, Divider, Mark, Modal, Text } from "@mantine/core";
 import React, { useCallback, useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useSearchParams } from "react-router-dom";
+
+import { getCodeFromError } from "../../helpers/errors";
 
 const Settings_Delete: React.FC = () => {
   const [searchParams] = useSearchParams();

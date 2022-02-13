@@ -3,6 +3,7 @@ const schemaString = readFileSync(`${__dirname}/data/schema.graphql`, "utf8");
 
 module.exports = {
   parser: "@typescript-eslint/parser",
+  root: true,
   extends: [
     "plugin:react/recommended",
     "plugin:import/errors",
