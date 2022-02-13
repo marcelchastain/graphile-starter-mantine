@@ -5,6 +5,7 @@ const Home = lazy(() => import("./routes/Home"));
 const FourOhFourPage = lazy(() => import("./routes/404"));
 const Login = lazy(() => import("./routes/Login"));
 const Register = lazy(() => import("./routes/Register"));
+const Forgot = lazy(() => import("./routes/Forgot"));
 
 const AppRoutes: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const AppRoutes: React.FC = () => {
       <Route path={"/"} element={<Home />} />
       <Route path={"/login"} element={<Login />} />
       <Route path={"/register"} element={<Register />} />
+      <Route path={"/forgot"} element={<Forgot />} />
       <Route path={"*"} element={<FourOhFourPage />} />
     </Routes>
   );
