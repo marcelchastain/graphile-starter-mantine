@@ -13,9 +13,8 @@ import {
   UnstyledButtonProps,
 } from "@mantine/core";
 import React, { forwardRef, useCallback } from "react";
-// import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import { AiOutlineCrown, AiOutlineDown } from "react-icons/ai";
-// import { navigate } from "vite-plugin-ssr/client/router";
 import { useLocation, useNavigate } from "react-router-dom";
 import { projectName } from "@app/config";
 
@@ -111,9 +110,9 @@ export function AppHeader({
         paddingRight: theme.spacing.xl,
       })}
     >
-      {/*<Helmet>*/}
-      {/*  <title>{title ? `${title} — ${projectName}` : projectName}</title>*/}
-      {/*</Helmet>*/}
+      <Helmet>
+        <title>{title ? `${title} — ${projectName}` : projectName}</title>
+      </Helmet>
       <div>
         <Grid align={"center"} grow>
           <Grid.Col span={3}>
