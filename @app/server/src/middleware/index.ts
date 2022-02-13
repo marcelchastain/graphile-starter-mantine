@@ -1,5 +1,5 @@
 import installClientStatic from "./installClientStatic";
-import installCSRFProtection from "./installCSRFProtection";
+import installCors from "./installCors";
 import installCypressServerCommand from "./installCypressServerCommand";
 import installDatabasePools from "./installDatabasePools";
 import installErrorHandler from "./installErrorHandler";
@@ -14,7 +14,7 @@ import installWorkerUtils from "./installWorkerUtils";
 
 export {
   installClientStatic,
-  installCSRFProtection,
+  installCors,
   installCypressServerCommand,
   installDatabasePools,
   installErrorHandler,

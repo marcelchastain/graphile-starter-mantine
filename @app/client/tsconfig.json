@@ -23,5 +23,12 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "references": [
+    {"path": "../config"},
+    {"path": "../graphql"},
   ]
 }

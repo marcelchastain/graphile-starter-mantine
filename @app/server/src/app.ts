@@ -97,12 +97,12 @@ export async function makeApp({
    * express middleware. These helpers may be asynchronous, but they should
    * operate very rapidly to enable quick as possible server startup.
    */
+  await middleware.installCors(app);
   await middleware.installDatabasePools(app);
   await middleware.installWorkerUtils(app);
   await middleware.installHelmet(app);
   await middleware.installSameOrigin(app);
   await middleware.installSession(app);
-  await middleware.installCSRFProtection(app);
   await middleware.installPassport(app);
   await middleware.installLogging(app);
   if (process.env.FORCE_SSL) {

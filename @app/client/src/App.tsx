@@ -1,11 +1,16 @@
 import "nprogress/nprogress.css";
 import "./App.css";
-import React, { Suspense, lazy, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import NProgress from "nprogress";
+import { ApolloProvider } from "@apollo/client";
+import { MantineProvider, TypographyStylesProvider } from "@mantine/core";
+import { NotificationsProvider } from "@mantine/notifications";
 
-const Home = lazy(() => import("./routes/Home"));
-const About = lazy(() => import("./routes/About"));
+import React, { Suspense, useEffect } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import NProgress from "nprogress";
+import { client } from "./helpers/apolloClient";
+import AppRoutes from "@app/client/src/AppRoutes";
+
+// TODO mc-2022-02-13 Helmet
 
 NProgress.configure({
   showSpinner: false,
@@ -25,28 +30,25 @@ const Loading: React.FC = () => {
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to={"/"}>Home</Link>
-              </li>
-              <li>
-                <Link to={"/about"}>About</Link>
-              </li>
-            </ul>
-          </nav>
-          <Suspense fallback={<Loading />}>
-            <Routes>
-              <Route path={"/"} element={<Home />} />
-              <Route path={"/about"} element={<About />} />
-            </Routes>
-          </Suspense>
-        </div>
-      </Router>
-    </div>
+    <MantineProvider
+      withNormalizeCSS
+      withGlobalStyles
+      theme={{ colorScheme: "dark" }}
+    >
+      <NotificationsProvider>
+        <TypographyStylesProvider>
+          <div className="App">
+            <ApolloProvider client={client}>
+              <Router>
+                <Suspense fallback={<Loading />}>
+                  <AppRoutes />
+                </Suspense>
+              </Router>
+            </ApolloProvider>
+          </div>
+        </TypographyStylesProvider>
+      </NotificationsProvider>
+    </MantineProvider>
   );
 }
 
