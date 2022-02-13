@@ -108,8 +108,6 @@ export async function makeApp({
   if (process.env.FORCE_SSL) {
     await middleware.installForceSSL(app);
   }
-  // These are our assets: images/etc; served out of the /@app/server/public folder (if present)
-  await middleware.installSharedStatic(app);
   if (isTest || isDev) {
     await middleware.installCypressServerCommand(app);
   }

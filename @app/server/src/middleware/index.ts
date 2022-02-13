@@ -10,7 +10,6 @@ import installPassport from "./installPassport";
 import installPostGraphile from "./installPostGraphile";
 import installSameOrigin from "./installSameOrigin";
 import installSession from "./installSession";
-import installSharedStatic from "./installSharedStatic";
 import installWorkerUtils from "./installWorkerUtils";
 
 export {
@@ -26,6 +25,5 @@ export {
   installPostGraphile,
   installSameOrigin,
   installSession,
-  installSharedStatic,
   installWorkerUtils,
 };
