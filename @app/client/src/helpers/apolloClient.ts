@@ -25,6 +25,8 @@ function createWsClient() {
   });
 }
 
+const isDev = process.env.NODE_ENV !== "production";
+
 export function resetWebsocketConnection(): void {
   if (wsClient) {
     wsClient.dispose();
@@ -74,7 +76,7 @@ class WebSocketLink extends ApolloLink {
 function makeMainLink(ROOT_URL: string) {
   const httpLink = new HttpLink({
     uri: `${ROOT_URL}/graphql`,
-    credentials: "same-origin",
+    credentials: isDev ? "include" : "same-origin",
   });
   _rootURL = ROOT_URL;
   wsClient = createWsClient();
