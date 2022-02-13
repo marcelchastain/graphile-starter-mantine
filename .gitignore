@@ -1,7 +1,7 @@
 .env
-.next
 node_modules
 dist
+build
 /heroku-setup
 /yarn-error.log
 /@app/e2e/cypress/videos
