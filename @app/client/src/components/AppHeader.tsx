@@ -15,7 +15,7 @@ import {
 import React, { forwardRef, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { AiOutlineCrown, AiOutlineDown } from "react-icons/ai";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router";
 import { projectName } from "@app/config";
 
 import { AuthRestrict, Warn } from "../components";

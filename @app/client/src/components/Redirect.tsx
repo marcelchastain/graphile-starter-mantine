@@ -1,7 +1,7 @@
 import { useApolloClient } from "@apollo/client";
 import { Skeleton } from "@mantine/core";
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 import { H3, StandardWidth } from "./index";
 import { SharedLayout } from "./SharedLayout";

@@ -13,6 +13,18 @@ const Settings_Delete = lazy(() => import("./routes/settings/Delete"));
 const Settings_Emails = lazy(() => import("./routes/settings/Emails"));
 const Settings_Profile = lazy(() => import("./routes/settings/Index"));
 const Settings_Security = lazy(() => import("./routes/settings/Security"));
+const CreateOrganization = lazy(() => import("./routes/CreateOrganization"));
+const Organizations = lazy(() => import("./routes/o/Index"));
+const Organization = lazy(() => import("./routes/o/[slug]/Index"));
+const Organization_Profile = lazy(
+  () => import("./routes/o/[slug]/settings/Index")
+);
+const Organization_Members = lazy(
+  () => import("./routes/o/[slug]/settings/Members")
+);
+const Organization_Delete = lazy(
+  () => import("./routes/o/[slug]/settings/Delete")
+);
 
 const AppRoutes: React.FC = () => {
   return (
@@ -28,6 +40,18 @@ const AppRoutes: React.FC = () => {
       <Route path={"/settings/delete"} element={<Settings_Delete />} />
       <Route path={"/settings/emails"} element={<Settings_Emails />} />
       <Route path={"/settings/security"} element={<Settings_Security />} />
+      <Route path={"/create-organization"} element={<CreateOrganization />} />
+      <Route path={"/o"} element={<Organizations />} />
+      <Route path={"/o/:slug"} element={<Organization />} />
+      <Route path={"/o/:slug/settings"} element={<Organization_Profile />} />
+      <Route
+        path={"/o/:slug/settings/members"}
+        element={<Organization_Members />}
+      />
+      <Route
+        path={"/o/:slug/settings/delete"}
+        element={<Organization_Delete />}
+      />
       <Route path={"*"} element={<FourOhFourPage />} />
     </Routes>
   );
