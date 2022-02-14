@@ -25,6 +25,7 @@ const Organization_Members = lazy(
 const Organization_Delete = lazy(
   () => import("./routes/o/[slug]/settings/Delete")
 );
+const Invitations_Accept = lazy(() => import("./routes/invitations/Accept"));
 
 const AppRoutes: React.FC = () => {
   return (
@@ -35,12 +36,13 @@ const AppRoutes: React.FC = () => {
       <Route path={"/reset"} element={<Reset />} />
       <Route path={"/forgot"} element={<Forgot />} />
       <Route path={"/verify"} element={<Verify />} />
+      <Route path={"/create-organization"} element={<CreateOrganization />} />
+      <Route path={"/invitations/accept"} element={<Invitations_Accept />} />
       <Route path={"/settings"} element={<Settings_Profile />} />
       <Route path={"/settings/accounts"} element={<Settings_Accounts />} />
       <Route path={"/settings/delete"} element={<Settings_Delete />} />
       <Route path={"/settings/emails"} element={<Settings_Emails />} />
       <Route path={"/settings/security"} element={<Settings_Security />} />
-      <Route path={"/create-organization"} element={<CreateOrganization />} />
       <Route path={"/o"} element={<Organizations />} />
       <Route path={"/o/:slug"} element={<Organization />} />
       <Route path={"/o/:slug/settings"} element={<Organization_Profile />} />
