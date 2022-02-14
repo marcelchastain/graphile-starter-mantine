@@ -7,6 +7,7 @@ import {
 } from "@app/client/src/components";
 import {
   OrganizationPage_OrganizationFragment,
+  SharedDocument,
   SharedLayout_UserFragment,
   useDeleteOrganizationMutation,
   useOrganizationPageQuery,
@@ -64,16 +65,16 @@ const OrganizationSettingsPageInner: React.FC<OrganizationSettingsPageInnerProps
           variables: {
             organizationId: organization.id,
           },
-          // TODO mc-2022-02-03 This doesn't seem to be doing the job
-          // or there's a caching issue
-          refetchQueries: ["Shared"],
+          // refetchQueries doesn't work with the string name;
+          // you have to import the gql object and specify any variables.
+          refetchQueries: [{ query: SharedDocument }],
           awaitRefetchQueries: true,
         });
         notifications.showNotification({
           message: `Organization '${organization.name}' successfully deleted`,
         });
         // Don't await navigate()
-        await navigate("/");
+        navigate("/");
       } catch (e: any) {
         setError(e);
         return;
